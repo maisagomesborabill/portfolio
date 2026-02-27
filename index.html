@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maisa Portfólio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b12;
+color:white;
+overflow-x:hidden;
+background-image:
+linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+background-size:40px 40px;
+}
+
+body::before, body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle, rgba(168,85,247,0.35), transparent 70%);
+filter:blur(120px);
+z-index:-1;
+}
+body::before{top:-150px;left:-150px;}
+body::after{bottom:-150px;right:-150px;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+h1{
+font-size:64px;
+background:linear-gradient(90deg,#fff,#c084fc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:fade 1.2s forwards;
+opacity:0;
+}
+
+.hero p{
+margin-top:15px;
+color:#bbb;
+font-size:18px;
+animation:fade 1.8s forwards;
+opacity:0;
+}
+
+.botoes{
+margin-top:35px;
+animation:fade 2.4s forwards;
+opacity:0;
+}
+
+/* HOW EFFECT */
+button{
+padding:14px 30px;
+margin:8px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+font-size:15px;
+font-weight:500;
+transition:.25s;
+transform:scale(1);
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.btn1{
+background:#a855f7;
+color:white;
+box-shadow:0 0 20px rgba(168,85,247,0.7);
+}
+
+.btn2{
+background:transparent;
+border:1px solid #a855f7;
+color:#c084fc;
+}
+
+/* SOBRE */
+#sobre{
+padding:120px 20px;
+max-width:800px;
+margin:auto;
+text-align:center;
+opacity:0;
+animation:fade 1.5s forwards;
+}
+
+#sobre p{
+color:#bbb;
+margin-top:20px;
+line-height:1.6;
+}
+
+/* TRABALHOS */
+#trabalhos{
+padding:100px 20px;
+max-width:1100px;
+margin:auto;
+text-align:center;
+display:none;
+opacity:0;
+}
+
+.cards{
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+}
+
+.card{
+background:#11111a;
+padding:30px;
+border-radius:20px;
+width:320px;
+box-shadow:0 0 25px rgba(168,85,247,0.2);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card p{
+color:#aaa;
+margin-top:10px;
+}
+
+.card a{
+display:inline-block;
+margin-top:15px;
+text-decoration:none;
+background:#a855f7;
+color:white;
+padding:12px 25px;
+border-radius:25px;
+transition:.25s;
+}
+
+.card a:hover{
+transform:scale(1.1);
+}
+
+.show{
+display:block !important;
+animation:fade 1s forwards;
+}
+
+@keyframes fade{
+to{
+opacity:1;
+transform:translateY(-10px);
+}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<h1>Maisa Gomes Lourenço</h1>
+
+<p>Crio sites e cardápios digitais profissionais para empresas que querem vender mais.</p>
+
+<div class="botoes">
+<button class="btn1" onclick="scrollSobre()">Sobre mim</button>
+<button class="btn2" onclick="mostrar()">Meus trabalhos</button>
+</div>
+</section>
+
+<section id="sobre">
+<h2>Sobre mim</h2>
+
+<p>
+Olá! Meu nome é Maisa Gomes Lourenço. Desenvolvo sites e cardápios digitais profissionais, criando soluções práticas que ajudam negócios a vender mais e melhorar a experiência dos clientes. Estou sempre aprendendo novas tecnologias e formas de entregar valor real aos meus clientes.
+</p>
+</section>
+
+<section id="trabalhos">
+
+<h2>Meus Trabalhos</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Cardápio Digital + QRCode de brinde</h3>
+
+<p>
+Cardápio digital interativo com cálculo automático de pedidos, seleção de quantidade e envio direto para WhatsApp. Inclui QR Code gratuito para acesso rápido dos clientes.
+</p>
+
+<a href="https://maisagomesborabill.github.io/Card-pio-Digital/" target="_blank">
+Abrir Cardápio
+</a>
+</div>
+
+<div class="card">
+<h3>Sistema de Cadastro em Python</h3>
+
+<p>
+Sistema de autenticação desenvolvido em Python com validação de dados e verificação de login, demonstrando lógica e estrutura de programação.
+</p>
+
+<a href="https://github.com/" target="_blank">
+Ver Projeto
+</a>
+</div>
+
+</div>
+</section>
+
+<script>
+function mostrar(){
+document.getElementById("trabalhos").classList.add("show");
+document.getElementById("trabalhos").scrollIntoView({behavior:"smooth"});
+}
+
+function scrollSobre(){
+document.getElementById("sobre").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+  </html>
