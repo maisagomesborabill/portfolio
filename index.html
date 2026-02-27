@@ -72,7 +72,7 @@ animation:fade 2.4s forwards;
 opacity:0;
 }
 
-/* HOW EFFECT */
+/* HOW */
 button{
 padding:14px 30px;
 margin:8px;
@@ -162,10 +162,23 @@ color:white;
 padding:12px 25px;
 border-radius:25px;
 transition:.25s;
+cursor:pointer;
 }
 
 .card a:hover{
 transform:scale(1.1);
+}
+
+.codigoBox{
+display:none;
+margin-top:20px;
+background:#0d0d17;
+padding:20px;
+border-radius:15px;
+text-align:left;
+font-size:14px;
+color:#c084fc;
+overflow:auto;
 }
 
 .show{
@@ -196,9 +209,8 @@ transform:translateY(-10px);
 
 <section id="sobre">
 <h2>Sobre mim</h2>
-
 <p>
-Olá! Meu nome é Maisa Gomes Lourenço. Desenvolvo sites e cardápios digitais profissionais, criando soluções práticas que ajudam negócios a vender mais e melhorar a experiência dos clientes. Estou sempre aprendendo novas tecnologias e formas de entregar valor real aos meus clientes.
+Olá! Meu nome é Maisa Gomes Lourenço. Desenvolvo sites e cardápios digitais profissionais, criando soluções práticas que ajudam negócios a vender mais e melhorar a experiência dos clientes. Estou sempre aprendendo novas tecnologias e formas de entregar valor real.
 </p>
 </section>
 
@@ -208,11 +220,12 @@ Olá! Meu nome é Maisa Gomes Lourenço. Desenvolvo sites e cardápios digitais 
 
 <div class="cards">
 
+<!-- CARD CARDAPIO -->
 <div class="card">
 <h3>Cardápio Digital + QRCode de brinde</h3>
 
 <p>
-Cardápio digital interativo com cálculo automático de pedidos, seleção de quantidade e envio direto para WhatsApp. Inclui QR Code gratuito para acesso rápido dos clientes.
+Cardápio digital interativo com cálculo automático de pedidos e envio direto para WhatsApp, ideal para modernizar estabelecimentos.
 </p>
 
 <a href="https://maisagomesborabill.github.io/Card-pio-Digital/" target="_blank">
@@ -220,18 +233,62 @@ Abrir Cardápio
 </a>
 </div>
 
+<!-- CARD SISTEMA -->
 <div class="card">
 <h3>Sistema de Cadastro em Python</h3>
 
 <p>
-Sistema de autenticação desenvolvido em Python com validação de dados e verificação de login, demonstrando lógica e estrutura de programação.
+Sistema de autenticação com validação de dados e verificação de login, demonstrando lógica e estrutura de programação.
 </p>
 
-<a href="https://github.com/" target="_blank">
-Ver Projeto
-</a>
+<a onclick="mostrarCodigo()">Ver projeto</a>
+
+<div id="codigoPython" class="codigoBox">
+<pre>
+# SISTEMA CADASTRO
+
+usuarios = {}
+
+print("=== CADASTRAR-SE ===")
+
+while True:
+    nome = input("Nome: ")
+    if nome.strip() == "":
+        print("Nome inválido")
+        continue
+    break
+
+while True:
+    senha = input("Senha: ")
+    if senha.strip() == "" or len(senha) < 4:
+        print("Senha inválida")
+        continue
+    break
+
+while True:
+    confirmar = input("Confirme: ")
+    if senha != confirmar:
+        print("Não coincide")
+        continue
+    break
+
+usuarios[nome] = senha
+print("Cadastro finalizado")
+
+while True:
+    nome_login = input("Nome: ")
+    if nome_login in usuarios:
+        break
+
+while True:
+    senha_login = input("Senha: ")
+    if usuarios[nome_login] == senha_login:
+        print("Login sucesso")
+        break
+</pre>
 </div>
 
+</div>
 </div>
 </section>
 
@@ -243,6 +300,10 @@ document.getElementById("trabalhos").scrollIntoView({behavior:"smooth"});
 
 function scrollSobre(){
 document.getElementById("sobre").scrollIntoView({behavior:"smooth"});
+}
+
+function mostrarCodigo(){
+document.getElementById("codigoPython").style.display="block";
 }
 </script>
 
