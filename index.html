@@ -38,7 +38,6 @@ z-index:-1;
 body::before{top:-150px;left:-150px;}
 body::after{bottom:-150px;right:-150px;}
 
-/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -72,7 +71,7 @@ animation:fade 2.4s forwards;
 opacity:0;
 }
 
-/* HOW */
+/* HOW EFFECT */
 button{
 padding:14px 30px;
 margin:8px;
@@ -209,9 +208,14 @@ transform:translateY(-10px);
 
 <section id="sobre">
 <h2>Sobre mim</h2>
+
 <p>
 Olá! Meu nome é Maisa Gomes Lourenço. Desenvolvo sites e cardápios digitais profissionais, criando soluções práticas que ajudam negócios a vender mais e melhorar a experiência dos clientes. Estou sempre aprendendo novas tecnologias e formas de entregar valor real.
 </p>
+
+<br><br>
+<button onclick="voltarTopo()" class="btn2">Voltar</button>
+
 </section>
 
 <section id="trabalhos">
@@ -220,7 +224,6 @@ Olá! Meu nome é Maisa Gomes Lourenço. Desenvolvo sites e cardápios digitais 
 
 <div class="cards">
 
-<!-- CARD CARDAPIO -->
 <div class="card">
 <h3>Cardápio Digital + QRCode de brinde</h3>
 
@@ -233,7 +236,6 @@ Abrir Cardápio
 </a>
 </div>
 
-<!-- CARD SISTEMA -->
 <div class="card">
 <h3>Sistema de Cadastro em Python</h3>
 
@@ -302,10 +304,14 @@ function scrollSobre(){
 document.getElementById("sobre").scrollIntoView({behavior:"smooth"});
 }
 
+function voltarTopo(){
+window.scrollTo({top:0, behavior:"smooth"});
+}
+
 function mostrarCodigo(){
 document.getElementById("codigoPython").style.display="block";
 }
 </script>
 
 </body>
-  </html>
+    </html>
